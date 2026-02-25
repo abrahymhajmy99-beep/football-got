@@ -1,25 +1,18 @@
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
 
-def get_match_info(match):
-    return {
-        'match_id': match['id'],
-        'team1_id': match['team1_id'],
-        'team2_id': match['team2_id'],
-        'score': match['score']
-    }
+# Updated function with team1_id and team2_id
+
+def get_match_info(match_id, team1_id, team2_id):
+    # fetch match info based on match_id, team1_id and team2_id
+    pass
 
 
 def add_goal(match_id, team_id):
-    # Assume match is retrieved from somewhere
-    match = get_match_by_id(match_id)
-    if match:
-        # Retrieve team IDs properly
-        match['score'][team_id] += 1
-        # additional logic
+    match_info = get_match_info(match_id, team_id)
+    # handle adding of goal using match_info
+    pass
 
-
-# Load environment variable for BOT_TOKEN
-load_dotenv()
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+# Ensure to use: os.getenv('BOT_TOKEN') where needed in your code.
